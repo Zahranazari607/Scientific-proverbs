@@ -1,0 +1,335 @@
+/* برای کل صفحات قسمت بدنه */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  position: center;
+  min-height: 100vh;
+}
+
+/* استایل برای بخش پس‌زمینه */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('scientific\ background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* استایل برای لایه ترانسپرنت یا نیمه شفاف*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 72, 72, 0.249);
+  z-index: 0;
+}
+
+/* استایل برای سربرگ یا هیدر */
+.header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* استایل برای منو بار یا نویگیشن بار */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* استایل برای لینک هایی که به نویگیشن بار شده است */
+.nav a {
+  color: #e1ecf4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* استایل دادن به خود هوور لینک ها  */
+.nav a:hover {
+  color: white;
+  background-color: #08a5b4;
+  border-radius: 5px;
+}
+
+/* استایل برای قسمت مقدمه یا اینتروداکشن */
+.intro {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* استایل برای باکس سرچ */
+.search-bar {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+/* استایل برای کارت های مخصوصی که در صفحه هوم گذاشتم */
+.featured {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+/* خود کارت های ضرب المثل و محتوایش */
+.proverb-card {
+  perspective: 1000px;
+  width: 300px;
+}
+
+/* استایل برای خود کارت ها یعنی داخل و بیرون کارت */
+.card-inner {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border: 2px solid #003366;
+  border-radius: 8px;
+}
+
+/* افکت باری چرخش کارت در زمانی که میچرخد به داخل یا پشت کارت  */
+.proverb-card:hover .card-inner {
+  transform: rotateX(180deg);
+  color: rgb(16,91,116);
+}
+
+/* استایل برای قسمت جلویی کارت */
+.card-front, .card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+   padding: 1rem;
+   box-sizing: border-box;
+   font-family: 'Noto Serif', serif;
+   font-size: 1.1rem;
+   text-align: center;
+}
+
+/* رنگ جلوی کارت این باشه */
+.card-front {
+  background-color: #c8e7fd;
+}
+
+/* استایل برای پشت کارت */
+.card-back {
+  background-color: #cdfafd;
+  transform: rotateX(180deg);
+}
+
+.featured,
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* استایل برای صفحه گالری برای محتویاتش */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* استایل برای عکس هایی که در کنار هر ضرب المثل در گالری هست */
+.proverb-item {
+  display: flex;
+  align-items: center;
+  background-color: #fefefe;
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* استایل برای عکس داخل پرو ورب های گالریم */
+.proverb-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* استایل برای صفحه جزتیات یا دیتیلز */
+.detail {
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* استایل برای کادری که دیتیل را در صفحه دیتیل قرار دادم */
+.proverb-detail {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px solid #cce6ff;
+  border-radius: 10px;
+  background-color: #f9fcff;
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.1);
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* استایل برای هدر 2 دیتیل */
+.detail h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/*استایل برای دکمه برگشت به گالری*/
+.back-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #003366;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* استایل برای هوور دکمه برگشت به صفحه گالری */
+.back-btn:hover {
+  background-color: #003366;
+  color: white;
+}
+
+/* استایل کلی برای فورم */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* استایل برای هدینگ 2 فورم */
+.form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* استایل برای دربرگیرنده فورم*/
+.form-container {
+  width: 100%;
+  max-width: 500px; /* عرض حداکثری فرم */
+  background-color: #f4f7f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+  box-sizing: border-box;
+}
+
+/* استایل برای مواردی که داخل فورم نوشته میشه*/
+form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* استایل برای ارسال دکمه فورم*/
+form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* افکت هوور روی دکمه فرم */
+form button:hover {
+  background-color: #006699;
+}
+
+
+/* استایل برای فوتر یا پانویس صفحه ها */
+.footer {
+   text-align:center;
+   padding: 0;
+   background-color: #003366;
+   color: white;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   box-sizing: border-box;
+   font-size: 0.5rem;
+   z-index: 1;
+}
+
+/* استایل برای اطلاعات ارتباطی */
+.contact-info {
+  margin-top: 0.5rem;
+  line-height: 1;
+}
+
+/* استایل برای لینک فوتر */
+.footer a {
+  color: #e1ecf4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* هوور برای لینک های فوتر */
+.footer a:hover {
+  color: #08a5b4;
+}
+
+/* استایل برای لینک اینستاگرامم در قسمت فوتر */
+.instagram-link {
+   display: inline-flex;
+   align-items: center;
+   vertical-align: middle;
+   line-height: 1;
+}
+
+/* استایل برای خود عصویر آیکون اینستاگرام در فوتر */
+.instagram-link img {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  display: block;
+}
+
+/* حالت ریسپانسیو برای صفحه‌نمایش‌های کوچکتر */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* ۲ ستون در تبلت */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* فقط ۱ ستون در موبایل */
+  }
+}
